@@ -1,3 +1,2 @@
-Requirements :
-  1. streamlit
-  2. sklearn
+streamlit
+sklearn
