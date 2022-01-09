@@ -31,7 +31,7 @@ display = st.number_input('Screen display in inch')
 battery = st.number_input('Battery capacity in MAH')
 
 # camera
-camera = st.selectbox('Camera',df['camera'].unique())
+camera = st.selectbox('Number of cameras',df['camera'].unique())
 
 # 5G
 fiveG = st.selectbox('5G',['No','Yes'])
@@ -47,7 +47,7 @@ if st.button('Predict Price'):
     query = np.array([company,model,processor,rom,ram,display,battery,camera,fiveG])
 
     query = query.reshape(1,9)
-    res = int(np.exp(pipe.predict(query)[0]))
-    res_plus = res + (res * 0.05)
-    res_min = res - (res * 0.05)
-    st.title("The predicted price of this configuration is between " + str(res_min) + " to " + str(res_plus))
+    #res = int(np.exp(pipe.predict(query)[0]))
+    #res_plus = res + (res * 0.05)
+    #res_min = res - (res * 0.05)
+    st.title("The predicted price for this configuration is " + str(int(np.exp(pipe.predict(query)[0]))))
