@@ -50,4 +50,4 @@ if st.button('Predict Price'):
     #res = int(np.exp(pipe.predict(query)[0]))
     #res_plus = res + (res * 0.05)
     #res_min = res - (res * 0.05)
-    st.title("The predicted price for this configuration is " + str(int(np.exp(pipe.predict(query)[0]))))
+    st.title("The predicted price for this configuration is " + str(int(np.exp(pipe.predict(query)[0])))+ " Rs")
